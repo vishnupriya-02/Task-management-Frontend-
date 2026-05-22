@@ -3,7 +3,7 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
-
+import Registration from "../pages/Registration";
 import Login from "../pages/Login";
 import DashBoard from "../pages/DashBoard";
 import EmployeeManagement from "../pages/EmployeeManagement";
@@ -23,9 +23,9 @@ function AppRoutes() {
     <BrowserRouter>
 
       <Routes>
-
         {/* Login Page */}
         <Route path="/" element={<Login />} />
+        <Route path="/register" element={<Registration />} />
 
         {/* Dashboard Layout */}
         <Route path="/dashboard" element={<MainLayout />}>

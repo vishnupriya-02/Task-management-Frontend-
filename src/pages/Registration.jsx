@@ -1,10 +1,11 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
-function Login() {
+function Register() {
   const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
+    name: "",
     email: "",
     password: "",
   });
@@ -23,7 +24,9 @@ function Login() {
 
     // API call here later
 
-    navigate("/dashboard");
+    alert("Registration Successful");
+
+    navigate("/");
   };
 
   return (
@@ -33,8 +36,16 @@ function Login() {
         className="bg-white p-8 rounded-xl shadow-md w-[350px]"
       >
         <h1 className="text-3xl font-bold text-center mb-6">
-          Login
+          Register
         </h1>
+
+        <input
+          type="text"
+          name="name"
+          placeholder="Enter Name"
+          className="w-full border p-3 rounded mb-4"
+          onChange={handleChange}
+        />
 
         <input
           type="email"
@@ -53,13 +64,13 @@ function Login() {
         />
 
         <button className="w-full bg-blue-600 text-white p-3 rounded">
-          Login
+          Register
         </button>
 
         <p className="text-center mt-4">
-          Don't have an account?{" "}
-          <Link to="/register" className="text-blue-600">
-            Register
+          Already have an account?{" "}
+          <Link to="/" className="text-blue-600">
+            Login
           </Link>
         </p>
       </form>
@@ -67,4 +78,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default Register;
